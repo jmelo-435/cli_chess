@@ -31,6 +31,15 @@ def test_a1c1e1g1_isBlack():
     assert Square(4,0).isBlack() ==  True
     assert Square(6,0).isBlack() ==  True
 
+def test_a2_is_Not_Black():
+    assert Square(0,1).isBlack() ==  False
+
+def test_b2_is_Black():
+    assert Square(1,1).isBlack() ==  True
+
+def test_f5_is_Not_Black():
+    assert Square(5,4).isBlack() ==  False
+
 def test_ColumnNumberAboveMax_ThrowsException():
     with pytest.raises(InvalidSquareException):
         Square(8,6)
