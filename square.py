@@ -1,8 +1,15 @@
+
+class InvalidSquareException(Exception):
+    pass
 class Square():
     _file = 0
     _column = 0
 
     def __init__(self, column = 0, file = 0) -> None:
+
+        if column > 7 or file > 7:
+            raise InvalidSquareException("Invalid Square Coordinate")
+
         self._file = file
         self._column = column
 

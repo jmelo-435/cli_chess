@@ -1,4 +1,5 @@
-from ..square import Square
+from ..square import Square,InvalidSquareException
+import pytest
 
 def test_square_has_coordinates():
     assert Square().get_coordinates() != None
@@ -17,3 +18,11 @@ def test_TheSeventhSquare_OnSecondColumn_is_b7():
 
 def test_TheSeventhSquare_OnSeventhColumn_is_g7():
     assert Square(6,6).get_coordinates() == "g7"
+
+def test_ColumnNumberAboveMax_ThrowsException():
+    with pytest.raises(InvalidSquareException):
+        Square(8,6)
+
+def test_RowNumberAboveMax_ThrowsException():
+    with pytest.raises(InvalidSquareException):
+        Square(6,8)
