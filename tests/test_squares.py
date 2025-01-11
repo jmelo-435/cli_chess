@@ -19,6 +19,13 @@ def test_TheSeventhSquare_OnSecondColumn_is_b7():
 def test_TheSeventhSquare_OnSeventhColumn_is_g7():
     assert Square(6,6).get_coordinates() == "g7"
 
+def test_a1_isBlack():
+    assert Square(0,0).isBlack() ==  True
+
+def test_b1_is_Not_Black():
+    assert Square(1,0).isBlack() ==  False
+
+
 def test_ColumnNumberAboveMax_ThrowsException():
     with pytest.raises(InvalidSquareException):
         Square(8,6)

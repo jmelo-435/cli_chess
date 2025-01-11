@@ -18,4 +18,9 @@ class Square():
         column_coordinate = self._column + ord("a")
         
         return chr(column_coordinate) + str(file_coordinate)
+    
+    def isBlack(self):
+        if self._column== 0:
+            return True
         
+        return False
