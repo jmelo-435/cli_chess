@@ -22,5 +22,5 @@ class Square():
     def isBlack(self):
         if self._file % 2 == 0:
             return self._column % 2 == 0
-        else:
-            return self._column % 2 == 1
+        
+        return self._column % 2 == 1
