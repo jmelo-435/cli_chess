@@ -25,6 +25,11 @@ def test_a1_isBlack():
 def test_b1_is_Not_Black():
     assert Square(1,0).isBlack() ==  False
 
+def test_a1c1e1g1_isBlack():
+    assert Square(0,0).isBlack() ==  True
+    assert Square(2,0).isBlack() ==  True
+    assert Square(4,0).isBlack() ==  True
+    assert Square(6,0).isBlack() ==  True
 
 def test_ColumnNumberAboveMax_ThrowsException():
     with pytest.raises(InvalidSquareException):

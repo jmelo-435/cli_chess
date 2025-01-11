@@ -20,7 +20,7 @@ class Square():
         return chr(column_coordinate) + str(file_coordinate)
     
     def isBlack(self):
-        if self._column== 0:
+        if self._column % 2 == 0:
             return True
         
         return False
