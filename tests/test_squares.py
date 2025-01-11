@@ -12,4 +12,7 @@ def test_TheSecondSquare_OnFirstColumn_is_a2():
 def test_TheSeventhSquare_OnFirstColumn_is_a7():
     assert Square(0,6).get_coordinates() == "a7"
 
+def test_TheSeventhSquare_OnSecondColumn_is_b7():
+    assert Square(1,6).get_coordinates() == "b7"
+
 
