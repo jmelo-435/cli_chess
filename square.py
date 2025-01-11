@@ -8,8 +8,7 @@ class Square():
 
     def get_coordinates(self):
         file_coordinate = self._file + 1
-        if self._column == 0:
-            return "a" + str(file_coordinate)
+        column_coordinate = self._column + ord("a")
         
-        return "b" + str(file_coordinate)
+        return chr(column_coordinate) + str(file_coordinate)
         
