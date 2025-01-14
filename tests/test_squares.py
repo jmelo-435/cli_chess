@@ -47,3 +47,12 @@ def test_ColumnNumberAboveMax_ThrowsException():
 def test_RowNumberAboveMax_ThrowsException():
     with pytest.raises(InvalidSquareException):
         Square(6,8)
+
+def test_WhiteSquare_Representation():
+    assert Square(5,4).print() == """        """
+
+def test_BlackSquare_Representation():
+    assert Square(5,5).print() == """########"""
+
+def test_SquareOnTheLastColum_BreakLines():
+    assert Square(7,5).print() == """########\n"""

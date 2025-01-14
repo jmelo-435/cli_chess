@@ -24,3 +24,15 @@ class Square():
             return self._column % 2 == 0
         
         return self._column % 2 == 1
+
+    def print(self):
+        break_line = ""
+        if self._column==7:
+            break_line = "\n"
+        if self.isBlack():
+            return """########""" + break_line
+        return """        """ + break_line
+    
+    def get_numeral_coordinates(self):
+        return (self._column,self._file)
+
