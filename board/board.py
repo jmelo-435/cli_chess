@@ -15,6 +15,10 @@ class Board():
     def get_square(self,coordinate):
         
         return next(square for square in self.squares if square.get_coordinates() == coordinate)  
+    
+    def _add_foot_coordinates(self,board):
+        footer = "     a       b       c       d       e       f       g       h    "
+        return board + footer
 
     def toString(self):
         i = 0
@@ -35,7 +39,7 @@ class Board():
                 k+=1
             i+=1
         
-        return representation + "     a       b       c       d       e       f       g       h    "
+        return self._add_foot_coordinates(representation)
 
         
     
