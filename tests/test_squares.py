@@ -1,4 +1,4 @@
-from ..square import Square,InvalidSquareException
+from ..board.square import Square,InvalidSquareException
 import pytest
 
 def test_square_has_coordinates():
