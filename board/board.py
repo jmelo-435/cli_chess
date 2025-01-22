@@ -20,6 +20,9 @@ class Board():
     def _add_foot_coordinates(self):
         footer = "     a       b       c       d       e       f       g       h    "
         return self._representation + footer
+    
+    def _add_horizontal_coordinates(self,line):
+        self._representation += (str(8-line)+" ")
 
     def toString(self):
         i = 0
@@ -28,7 +31,7 @@ class Board():
             k=0
             while k <4:
                 if k ==0:
-                    self._representation += (str(8-i)+" ")
+                    self._add_horizontal_coordinates(i)
                 else:
                     self._representation += ("  ")
                 j = 0
