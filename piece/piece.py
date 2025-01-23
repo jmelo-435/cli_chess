@@ -7,3 +7,6 @@ class Piece():
     
     def isWhite(self):
         return self._isWhite
+    
+    def moveTo(self,square):
+        pass
