@@ -2,13 +2,14 @@ from .square import Square
 
 class Board():
     squares = []
-    _representation = ""
+    _representation = None
+    dimension = 8
 
     def __init__(self) -> None:
         i=0
-        while i <8:
+        while i <self.dimension:
             j=0
-            while j <8:
+            while j <self.dimension:
                 self.squares.append(Square(i,j))
                 j += 1
             i+=1
@@ -19,30 +20,44 @@ class Board():
     
     def _add_foot_coordinates(self):
         footer = "     a       b       c       d       e       f       g       h    "
-        return self._representation + footer
+        self._representation += footer
     
-    def _add_horizontal_coordinates(self,line):
-        self._representation += (str(8-line)+" ")
+    def _print_pixels_of_square(self,file,column):
+        square = next(square for square in self.squares if square.get_numeral_coordinates() == (column,file))
+        self._representation += square.print()
 
-    def toString(self):
+    def _print_pixels_on_file(self,file):
+        i = 0
+        while i<self.dimension:
+            self._print_pixels_of_square(file,i)
+            i+=1
+    
+    def _return_horizontal_coordinate_or_spacer(self,iteration,line):
+        if iteration == 0:
+            return str(self.dimension-line) + " "
+        return "  "
+        
+    
+    def _print_line_of_pixels_on_file(self,file,times):
+        i=0
+        while i <times:
+            self._representation += self._return_horizontal_coordinate_or_spacer(i,file)
+            self._print_pixels_on_file(file)
+            i+=1
+
+    def _print_files(self):
         i = 0
 
-        while i<8:
-            k=0
-            while k <4:
-                if k ==0:
-                    self._add_horizontal_coordinates(i)
-                else:
-                    self._representation += ("  ")
-                j = 0
-                while j<8:
-                    square = next(square for square in self.squares if square.get_numeral_coordinates() == (j,i))
-                    self._representation += square.print()
-                    j+=1
-                k+=1
+        while i<self.dimension:
+            self._print_line_of_pixels_on_file(i,4)
             i+=1
-        
-        return self._add_foot_coordinates()
+
+    def toString(self):
+        self._representation = ""
+        self._print_files()
+        self._add_foot_coordinates()
+
+        return self._representation
 
         
     
