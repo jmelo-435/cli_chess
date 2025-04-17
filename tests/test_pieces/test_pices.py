@@ -1,4 +1,4 @@
-from ..piece.piece import Piece
+from ...piece.piece import Piece
 
 piece = Piece()
 
