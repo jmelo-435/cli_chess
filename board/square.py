@@ -1,3 +1,4 @@
+from ..utils.coordinates_converter import Converter
 
 class InvalidSquareException(Exception):
     pass
@@ -14,10 +15,7 @@ class Square():
         self._column = column
 
     def get_coordinates(self):
-        file_coordinate = self._file + 1
-        column_coordinate = self._column + ord("a")
-        
-        return chr(column_coordinate) + str(file_coordinate)
+        return Converter().get_coordinates(self._file,self._column)
     
     def isBlack(self):
         if self._file % 2 == 0:
