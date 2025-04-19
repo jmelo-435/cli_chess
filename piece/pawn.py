@@ -4,7 +4,7 @@ from ..utils.coordinates_converter import Converter
 class Pawn(Piece):
     
     def to_string(self):
-        if self.isWhite():
+        if self.is_white():
             return super().to_string()
         return "♟"
     

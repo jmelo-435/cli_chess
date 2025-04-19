@@ -6,10 +6,10 @@ class Piece():
     def __init__(self,isWhite= True) -> None:
         self._isWhite = isWhite
     
-    def isWhite(self):
+    def is_white(self):
         return self._isWhite
     
-    def moveTo(self,square):
+    def move_to(self,square):
         self.coordinates = square.get_numeral_coordinates()
 
     def get_coordinates(self):
