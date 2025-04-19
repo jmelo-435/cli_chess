@@ -15,7 +15,7 @@ class Square():
         self._column = column
 
     def get_coordinates(self):
-        return Converter().get_coordinates(self._file,self._column)
+        return Converter().get_alphanumerical_coordinate(self._file,self._column)
     
     def isBlack(self):
         if self._file % 2 == 0:

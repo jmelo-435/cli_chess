@@ -15,7 +15,7 @@ class King(Piece):
         for i in range(column-1,column+2):
             for j in range(file-1,file+2):
                 if (i,j) != self.coordinates:
-                    possibilities.append((i,j))
+                    possibilities.append(Converter().get_alphanumerical_coordinate(i,j))
         
-        return [Converter().get_coordinates(i[0],i[1]) for i in possibilities]
+        return  possibilities
         
